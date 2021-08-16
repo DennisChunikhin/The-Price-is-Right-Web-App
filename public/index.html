@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rooms</title>
+        <link href="/style.css" rel="stylesheet" />
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <div id="welcome">
+            <h1>Welcome!</h1>
+            <p><input id="username" placeholder="Username" /></p>
+            
+            <hr />
+            <h3>Join a room: <input id="room" placeholder="Room Code" />
+            <button id="join">Join</button></h3>
+            <h3>Or</h3>
+            <h3>Create a room: <button id="create">Create</button></h3>
+
+            <hr />
+            <h2>Rules</h2>
+            <p>Players have to guess the price of a random item. Points are awarded as follows: </p>
+            <ul>
+                <li>If a player's guess exceeds the price, they get no points, regardless of how close their guess is.</li>
+                <li>The player whose guess is closest to the price while not exceeding the price gets 1 point (if multiple players tie, they all get 1 point).</li>
+                <li>If a player guesses the exact price, they get 3 points (if multiple players guess the exact price, they all get 3 points).</li>
+            </ul>
+        </div>
+
+        <div id="game">
+            <h2 id="roomCode"></h2>
+            <table id="players"></table>
+
+            <hr />
+
+            <h1 id="itemName"></h1>
+
+            <hr />
+
+            <input id="guess" type="number" placeholder="Guess" disabled />
+            <button id="submitGuess" disabled>Submit Guess</button>
+        </div>
+        
+        <script src="/script.js"></script>
+    </body>
+</html>
